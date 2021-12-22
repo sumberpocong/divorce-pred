@@ -1,0 +1,415 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Starts header section -->
+    <div class="row justify-content-md-center mb-4">
+        <h2 class='text-primary'>Predict Relationships</h2>        
+    </div>
+
+    <div class="row justify-content-md-center mb-4">
+      <h3 class='text-primary'>How strongly do you disagree or agree with the statements?</h3>
+    </div>
+
+    <div class="row justify-content-md-center mb-4">
+      <h4 class='text-primary'> Scale from 0 (strongly disagre) to 4 (strongly agree)</h4>
+    </div>
+        
+    <!-- Ends header section -->
+    
+    <!-- Starts form section -->
+    <div class="form-container ">
+        <form class="form-horizontal" action = "/predict/" method="post">
+        
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q1">1. If one of us apologizes when our discussion deteriorates, the discussion ends.</label>
+              <div class="col-sm-1">
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q1" name="q1">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q2">2. I know we can ignore our differences, even if things get hard sometimes.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q2" name="q2">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q3">3. When we need it, we can take our discussions with my spouse from the beginning and correct it.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q3" name="q3">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q4">4. When I discuss with my spouse, to contact him will eventually work.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q4" name="q4">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q5">5. The time I spent with my wife is special for us.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q5" name="q5">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q6">6. We don't have time at home as partners.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q6" name="q6">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q7">7. We are like two strangers who share the same environment at home rather than family.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q7" name="q7">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q8">8. I enjoy our holidays with my wife.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q8" name="q8">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q9">9. I enjoy traveling with my wife.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q9" name="q9">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q10">10. Most of our goals are common to my spouse.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q10" name="q10">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q11">11. I think that one day in the future, when I look back, I see that my spouse and I have been in harmony with each other.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q11" name="q11">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q12">12. My spouse and I have similar values in terms of personal freedom.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q12" name="q12">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q13">13. My spouse and I have similar sense of entertainment.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q13" name="q13">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q14">14. Most of our goals for people (children, friends, etc.) are the same.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q14" name="q14">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q15">15. Our dreams with my spouse are similar and harmonious.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q15" name="q15">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q16">16. We're compatible with my spouse about what love should be.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q16" name="q16">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q17">17. We share the same views about being happy in our life with my spouse.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q17" name="q17">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q18">18. My spouse and I have similar ideas about how marriage should be.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q18" name="q18">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q19">19. My spouse and I have similar ideas about how roles should be in marriage.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q19" name="q19">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q20">20. My spouse and I have similar values in trust.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q20" name="q20">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q21">21. I know exactly what my wife likes.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q21" name="q21">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q22">22. I know how my spouse wants to be taken care of when she/he sick.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q22" name="q22">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q23">23. I know my spouse's favorite food.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q23" name="q23">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q24">24. I can tell you what kind of stress my spouse is facing in her/his life.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q24" name="q24">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q25">25. I have knowledge of my spouse's inner world.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q25" name="q25">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q26">26. I know my spouse's basic anxieties.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q26" name="q26">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q27">27. I know what my spouse's current sources of stress are.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q27" name="q27">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q28">28. I know my spouse's hopes and wishes.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q28" name="q28">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q29">29. I know my spouse very well.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q29" name="q29">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q30">30. I know my spouse's friends and their social relationships.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q30" name="q30">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q31">31. I feel aggressive when I argue with my spouse.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q31" name="q31">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q32">32. When discussing with my spouse, I usually use expressions such as ‘you always’ or ‘you never’.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q32" name="q32">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q33">33. I can use negative statements about my spouse's personality during our discussions.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q33" name="q33">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q34">34. I can use offensive expressions during our discussions.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q34" name="q34">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q35">35. I can insult my spouse during our discussions.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q35" name="q35">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q36">36. I can be humiliating when we discussions.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q36" name="q36">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q37">37. My discussion with my spouse is not calm.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q37" name="q37">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q38">38. I hate my spouse's way of open a subject.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q38" name="q38">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q39">39. Our discussions often occur suddenly.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q39" name="q39">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q40">40. We're just starting a discussion before I know what's going on.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q40" name="q40">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q41">41. When I talk to my spouse about something, my calm suddenly breaks.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q41" name="q41">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q42">42. When I argue with my spouse, ı only go out and I don't say a word.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q42" name="q42">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q43">43. I mostly stay silent to calm the environment a little bit.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q43" name="q43">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q44">44. Sometimes I think it's good for me to leave home for a while.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q44" name="q44">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q45">45. I'd rather stay silent than discuss with my spouse.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q45" name="q45">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q46">46. Even if I'm right in the discussion, I stay silent to hurt my spouse.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q46" name="q46">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q47">47. When I discuss with my spouse, I stay silent because I am afraid of not being able to control my anger.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q47" name="q47">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q48">48. I feel right in our discussions.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q48" name="q48">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q49">49. I have nothing to do with what I've been accused of.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q49" name="q49">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q50">50. I'm not actually the one who's guilty about what I'm accused of.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q50" name="q50">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q51">51. I'm not the one who's wrong about problems at home.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q51" name="q51">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q52">52. I wouldn't hesitate to tell my spouse about her/his inadequacy.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q52" name="q52">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q53">53. When I discuss, I remind my spouse of her/his inadequacy.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q53" name="q53">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-4" for="q54">54. I'm not afraid to tell my spouse about her/his incompetence.</label>
+              <div class="col-sm-1">          
+                <input type="number" step="1" min="0" max="4" class="form-control" id="q54" name="q54">
+              </div>
+            </div>
+            
+            <div class="form-group row"> 
+            <label class="control-label col-sm-4" for="">&nbsp;</label>                
+              <div class="col-sm-offset-2 col-sm-1">
+                <button type="submit" class="btn btn-primary">Predict</button>
+              </div>
+            </div>
+          </form>
+        <!-- Ends form section -->
+        
+        
+    </div>
+
+
+{% endblock %}

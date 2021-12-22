@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>Prediction is {{ prediction[0] }}</h3>
+    
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 0 %}
+                <h3 class='text-primary'>good</h3>
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 1 %}
+                <h3 class='text-primary'>not good</h3>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
